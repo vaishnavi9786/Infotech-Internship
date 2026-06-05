@@ -36,8 +36,7 @@
             <h1>Hi, I'm <span>Vaishnavi Dhopade</span></h1>
             <h2>Data Science Student</h2>
             <p>
-                Passionate about Artificial Intelligence, Machine Learning, Web Development, and Hackathons. 
-                I enjoy building innovative projects and continuously learning new technologies.
+                "A dedicated learner and aspiring developer who loves building creative projects, exploring new technologies, and solving real-world problems through code."
             </p>
             <div class="hero-buttons">
                 <a href="VAISHNAVI DHOPADE Resume (1).pdf" download class="resume-btn">Download Resume</a>
@@ -200,26 +199,8 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        emailjs.init("YOUR_PUBLIC_KEY");
-
-        document.getElementById("contactForm").addEventListener("submit", function(e) {
-            e.preventDefault();
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                subject: document.getElementById("subject").value,
-                message: document.getElementById("message").value
-            })
-            .then(function() {
-                document.getElementById("successMessage").style.display = "block";
-                document.getElementById("contactForm").reset();
-            })
-            .catch(function(error) {
-                alert("Error: " + error.text);
-            });
-        });
+    <script src="script.js">
     </script>
+    
 </body>
 </html>

@@ -472,6 +472,7 @@ background-clip: text;
 #projects h2{
     text-align: center;
     margin-bottom: 50px;
+    font-size: 42px;
 }
 
 .projects-container{
@@ -567,6 +568,12 @@ background-clip: text;
 /* ==========================
    PREMIUM ACHIEVEMENT BOX
 ========================== */
+h2{
+    text-align: center;
+    margin-bottom: 50px; 
+    FONT-SIZE: 42px;
+}
+
 .achievement-box{
     position: relative;
     max-width: 900px;
@@ -580,6 +587,9 @@ background-clip: text;
     transition: 0.5s;
     cursor: pointer;
     z-index: 1;
+
+    text-align: center;      /* Content center */
+    isolation: isolate;      /* Layer issue fix */
 }
 
 .achievement-box::before{
@@ -608,13 +618,16 @@ background-clip: text;
 
 .achievement-icon{
     font-size: 80px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;   /* Trophy center */
+    display: block;        /* Center sathi */
     animation: trophyBounce 2s infinite;
 }
 
 .achievement-box h3{
     font-size: 34px;
     margin-bottom: 20px;
+    text-align: center;    /* Heading center */
+
     background: linear-gradient(90deg, #00f2fe, #7c3aed);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -624,6 +637,7 @@ background-clip: text;
     font-size: 18px;
     line-height: 1.9;
     color: #dbeafe;
+    text-align: center;    /* Paragraph center */
 }
 
 @keyframes trophyBounce{
@@ -631,7 +645,6 @@ background-clip: text;
     50%{ transform: translateY(-15px); }
 }
 
-/* Global Border Animation Shared by Blocks */
 @keyframes borderMove{
     0%{ background-position: 0% 50%; }
     100%{ background-position: 300% 50%; }
@@ -1012,32 +1025,52 @@ footer::after{
 }
 
 /* ==========================
-   RESPONSIVE DESIGN (MEDIA QUERIES)
-========================== */
-@media(max-width: 768px){
-    .hero{
-        padding: 100px 8%;
+ /* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .navbar{
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
     }
 
-    .hero-image img{
-        width: 220px;
-        height: 220px;
+    .nav-links{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
     }
 
-    .hero-content h1{
-        font-size: 2.5rem;
+    .hero-content,
+    .about-content,
+    .achievement-box{
+        width: 95%;
+        padding: 20px;
     }
 
-    .hero-content h2{
-        font-size: 1.4rem;
-    }
-
-    .hero-buttons{
+    .connect-container,
+    .projects-container,
+    .certificate-container{
         flex-direction: column;
         align-items: center;
     }
 
-    .contact-container{
-        grid-template-columns: 1fr;
+    .connect-left,
+    .connect-right,
+    .project-card,
+    .social-card{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-content h1,
+    .connect-heading{
+        font-size: 2rem;
+    }
+
+    img{
+        max-width: 100%;
+        height: auto;
     }
 }
